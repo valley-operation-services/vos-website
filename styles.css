@@ -861,3 +861,24 @@ footer {
   display: block;
   transform: scale(1.25);
 }
+
+/* MOBILE MENU COLOR FIX */
+@media (max-width: 900px) {
+
+  .menu-toggle span {
+    background: #0e4a7b !important;
+  }
+
+  .site-nav a {
+    color: #ffffff;
+  }
+
+  .site-nav a:hover {
+    color: #e56a14;
+  }
+
+  .site-nav .nav-cta {
+    color: #ffffff;
+    border-color: #e56a14;
+  }
+}
