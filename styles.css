@@ -882,3 +882,28 @@ footer {
     border-color: #e56a14;
   }
 }
+
+/* CENTER MOBILE FOOTER */
+@media (max-width: 620px) {
+  .footer-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer-brand {
+    margin: 0 auto;
+  }
+
+  .footer-grid > p,
+  .footer-grid > p:last-child {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-domain {
+    display: block;
+    text-align: center;
+  }
+}
