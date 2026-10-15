@@ -322,7 +322,6 @@ h3 {
 }
 
 .statement h2 span { color: var(--orange); }
-.industries h2 span { color: var(--orange); }
 
 .statement-copy {
   color: #596273;
@@ -1069,4 +1068,34 @@ footer {
   .hero-content {
     transform: none !important;
   }
+}
+
+/* =========================
+   STICKY FOOTER (keeps footer
+   pinned to the bottom on
+   short pages, no color gap)
+========================= */
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+main > section:last-child {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
 }
