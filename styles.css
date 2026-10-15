@@ -322,6 +322,7 @@ h3 {
 }
 
 .statement h2 span { color: var(--orange); }
+.industries h2 span { color: var(--orange); }
 
 .statement-copy {
   color: #596273;
