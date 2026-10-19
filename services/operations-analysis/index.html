@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A clear look at how your operation runs from the office to the field, and exactly where time, money, and communication are being lost."
+  />
+
+  <title>Operations Analysis | V.O.S.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/styles.css?v=3" />
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container nav-wrap">
+
+      <a class="brand" href="/" aria-label="V.O.S. home">
+        <img
+          src="/vos-logo.png"
+          alt="Valley Operation Services"
+          class="brand-logo"
+        >
+      </a>
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/worked-with/">Worked With</a>
+        <a href="/process/">Process</a>
+        <a href="/about/">About</a>
+        <a href="/contact/" class="nav-cta">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="top">
+
+<!-- SERVICE HERO -->
+    <section class="svc-hero">
+      <div class="container">
+        <a href="/services/" class="svc-back">← All services</a>
+        <p class="section-kicker">SERVICE 03</p>
+        <h1>Operations Analysis</h1>
+        <p class="svc-lead">A clear look at how your operation runs from the office to the field, and exactly where time, money, and communication are being lost.</p>
+        <div class="hero-actions">
+          <a href="#schedule" class="btn btn-primary">Schedule a meeting <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+<!-- OVERVIEW -->
+    <section class="svc-overview section">
+      <div class="container svc-overview-grid">
+        <div>
+          <p class="section-kicker">HOW IT WORKS</p>
+          <p class="svc-intro">It is hard to see the problems in a business when you are inside it every day. We come in with fresh eyes, talk to your team, follow how work actually happens, and give you a clear picture of what is working, what is not, and what to fix first.</p>
+        </div>
+        <aside class="svc-signs">
+          <p class="section-kicker">THIS IS FOR YOU IF</p>
+          <ul>
+              <li>You know something is off but cannot pin down what</li>
+              <li>Growth has made everything feel harder, not easier</li>
+              <li>Margins are shrinking and you are not sure why</li>
+              <li>You want an outside opinion before investing in new tools</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+<!-- WHAT'S INCLUDED -->
+    <section class="services section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">WHAT'S INCLUDED</p>
+            <h2>What we deliver.</h2>
+          </div>
+          <p>Every project is shaped around your operation. Here is what this typically covers.</p>
+        </div>
+        <div class="svc-include-grid">
+            <div class="svc-include">
+              <span>01</span>
+              <h3>On site and remote review</h3>
+              <p>We sit with your office and field team to see how work really gets done, not just how it is supposed to.</p>
+            </div>
+            <div class="svc-include">
+              <span>02</span>
+              <h3>Bottleneck and gap mapping</h3>
+              <p>Identify where jobs stall, where information gets lost, and where people are waiting on each other.</p>
+            </div>
+            <div class="svc-include">
+              <span>03</span>
+              <h3>Cost of inefficiency</h3>
+              <p>Put real numbers on wasted time, rework, and missed opportunities so you know what each problem is costing you.</p>
+            </div>
+            <div class="svc-include">
+              <span>04</span>
+              <h3>Prioritized action plan</h3>
+              <p>A plain language report with the improvements that matter most, in the order that makes sense to tackle them.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+<!-- SCHEDULE -->
+    <section id="schedule" class="contact section">
+      <div class="container schedule-panel">
+        <div class="schedule-copy">
+          <p class="section-kicker">SCHEDULE A MEETING</p>
+          <h2>Let's talk about your operation.</h2>
+          <p>
+            Pick a day and time that works for you and tell us a little about what is going on.
+            We will confirm the meeting and come prepared. No pressure, no sales pitch.
+          </p>
+          <a class="btn btn-secondary booking-link" href="#" hidden target="_blank" rel="noopener">
+            Pick a time on our calendar <span>→</span>
+          </a>
+        </div>
+
+        <form class="schedule-form" data-service="Operations Analysis">
+          <div class="form-row">
+            <label>Name<input type="text" name="name" required autocomplete="name"></label>
+            <label>Company<input type="text" name="company" autocomplete="organization"></label>
+          </div>
+          <div class="form-row">
+            <label>Email<input type="email" name="email" required autocomplete="email"></label>
+            <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+          </div>
+          <div class="form-row">
+            <label>Preferred date<input type="date" name="date" required></label>
+            <label>Preferred time
+              <select name="time" required>
+                <option value="">Select a time</option>
+                <option>Morning (8 to 11 AM)</option>
+                <option>Midday (11 AM to 1 PM)</option>
+                <option>Afternoon (1 to 5 PM)</option>
+              </select>
+            </label>
+          </div>
+          <label>Meeting type
+            <select name="format">
+              <option>Phone call</option>
+              <option>Video call</option>
+              <option>In person</option>
+            </select>
+          </label>
+          <label>What would you like to talk about?
+            <textarea name="notes" rows="4" placeholder="A few sentences about your business and what is slowing you down."></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Request meeting <span>→</span></button>
+          <p class="form-note">Submitting opens an email to contact@valleyoperationservices.com with your request filled in.</p>
+        </form>
+      </div>
+    </section>
+
+<!-- OTHER SERVICES -->
+    <section class="svc-more section">
+      <div class="container">
+        <p class="section-kicker">OTHER SERVICES</p>
+        <div class="svc-more-list">
+          <a href="/services/field-service-software/" class="svc-more-link">
+            <span>01</span>Custom Field Service Management Software<em>→</em>
+          </a>
+          <a href="/services/systems/" class="svc-more-link">
+            <span>02</span>Build &amp; Implement Systems<em>→</em>
+          </a>
+          <a href="/services/process-improvement/" class="svc-more-link">
+            <span>04</span>Process Improvement &amp; Efficiency<em>→</em>
+          </a>
+          <a href="/services/websites-applications/" class="svc-more-link">
+            <span>05</span>Custom Websites and Applications<em>→</em>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+<!-- FOOTER -->
+  <footer>
+
+    <div class="container footer-grid">
+
+      <div class="brand footer-brand">
+        <img
+          src="/vos-logo.png"
+          alt="Valley Operation Services"
+          class="footer-logo"
+        >
+      </div>
+
+      <p>
+        <a
+          href="https://valleyoperationservices.com"
+          class="footer-domain"
+        >
+          valleyoperationservices.com
+        </a>
+      </p>
+
+      <p>
+        © <span id="year"></span> Valley Operation Services
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script.js?v=2"></script>
+
+</body>
+</html>

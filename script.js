@@ -23,7 +23,8 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 
 const revealTargets = document.querySelectorAll(
   ".service-card, .process-step, .team-card, .industry-tags span, " +
-  ".section-heading, .statement-grid, .about-intro, .contact-panel, .hero-proof > div"
+  ".section-heading, .statement-grid, .about-intro, .contact-panel, .hero-proof > div, " +
+  ".svc-include, .svc-signs, .schedule-panel"
 );
 
 if (!prefersReducedMotion && "IntersectionObserver" in window) {
@@ -69,3 +70,46 @@ if (heroContent && !prefersReducedMotion) {
     { passive: true }
   );
 }
+
+/* =========================
+   SCHEDULE A MEETING
+   Paste a Calendly / Cal.com / Google booking link here to
+   show a "Pick a time on our calendar" button on every service page.
+========================= */
+
+const VOS_BOOKING_URL = "";
+const VOS_EMAIL = "contact@valleyoperationservices.com";
+
+document.querySelectorAll(".booking-link").forEach((link) => {
+  if (VOS_BOOKING_URL) {
+    link.href = VOS_BOOKING_URL;
+    link.hidden = false;
+  }
+});
+
+document.querySelectorAll(".schedule-form").forEach((form) => {
+  const dateInput = form.querySelector('input[type="date"]');
+  if (dateInput) dateInput.min = new Date().toISOString().split("T")[0];
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const d = new FormData(form);
+    const service = form.dataset.service || "General";
+    const subject = `Meeting request: ${service}`;
+    const body = [
+      `Service: ${service}`,
+      `Name: ${d.get("name")}`,
+      `Company: ${d.get("company") || ""}`,
+      `Email: ${d.get("email")}`,
+      `Phone: ${d.get("phone") || ""}`,
+      `Preferred date: ${d.get("date")}`,
+      `Preferred time: ${d.get("time")}`,
+      `Meeting type: ${d.get("format")}`,
+      "",
+      "What I'd like to talk about:",
+      d.get("notes") || "",
+    ].join("\n");
+    window.location.href =
+      `mailto:${VOS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+});

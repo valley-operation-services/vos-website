@@ -1099,3 +1099,276 @@ main > section:last-child {
 footer {
   flex-shrink: 0;
 }
+
+/* =========================
+   CLICKABLE SERVICE CARDS
+========================= */
+
+a.service-card {
+  display: block;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.service-card:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: -2px;
+}
+
+a.service-card:hover h3 { color: #fff; }
+a.service-card-accent:hover .text-cta { transform: translateX(4px); }
+
+/* =========================
+   SERVICE DETAIL PAGES
+========================= */
+
+.svc-hero {
+  position: relative;
+  padding: 170px 0 90px;
+  border-bottom: 1px solid var(--steel);
+  background:
+    radial-gradient(circle at 82% 30%, rgba(229,106,20,.14), transparent 30%),
+    linear-gradient(115deg, #081224 0%, #0b1729 58%, #101e31 100%);
+}
+
+.svc-back {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  transition: .2s ease;
+}
+
+.svc-back:hover { color: #fff; transform: translateX(-3px); }
+
+.svc-hero h1 {
+  font-family: "Barlow Condensed", Arial, sans-serif;
+  max-width: 900px;
+  margin-top: 14px;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: .95;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+
+.svc-lead {
+  max-width: 680px;
+  margin-top: 26px;
+  color: #c9d2de;
+  font-size: 19px;
+}
+
+.svc-overview { background: var(--navy); }
+
+.svc-overview-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .9fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.svc-intro {
+  margin-top: 18px;
+  font-size: 22px;
+  line-height: 1.55;
+  color: #dfe5ee;
+}
+
+.svc-signs {
+  padding: 34px;
+  border: 1px solid var(--steel);
+  border-top: 3px solid var(--orange);
+  background: var(--surface);
+}
+
+.svc-signs ul {
+  list-style: none;
+  margin-top: 18px;
+}
+
+.svc-signs li {
+  position: relative;
+  padding: 12px 0 12px 26px;
+  color: var(--muted);
+  font-size: 15px;
+  border-bottom: 1px solid var(--steel);
+}
+
+.svc-signs li:last-child { border-bottom: 0; }
+
+.svc-signs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 21px;
+  width: 12px;
+  height: 2px;
+  background: var(--orange);
+}
+
+.svc-include-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--steel);
+  border-left: 1px solid var(--steel);
+}
+
+.svc-include {
+  padding: 34px;
+  border-right: 1px solid var(--steel);
+  border-bottom: 1px solid var(--steel);
+  transition: .25s ease;
+}
+
+.svc-include:hover { background: var(--surface-2); }
+
+.svc-include span {
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.svc-include h3 {
+  margin: 14px 0 12px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.svc-include p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Schedule */
+
+.schedule-panel {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 60px;
+  padding: 58px;
+  border: 1px solid var(--steel);
+  background:
+    linear-gradient(110deg, rgba(255,255,255,.025), rgba(255,255,255,0)),
+    var(--navy);
+}
+
+.schedule-copy h2 { margin: 10px 0 18px; }
+.schedule-copy .booking-link { margin-top: 28px; }
+.schedule-copy .booking-link[hidden] { display: none; }
+
+.schedule-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.schedule-form label {
+  display: grid;
+  gap: 8px;
+  color: #c9d2de;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.schedule-form input,
+.schedule-form select,
+.schedule-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--steel);
+  border-radius: 0;
+  background: var(--surface);
+  color: var(--white);
+  font: 400 15px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  color-scheme: dark;
+  transition: border-color .2s ease;
+}
+
+.schedule-form textarea { resize: vertical; }
+
+.schedule-form input:focus,
+.schedule-form select:focus,
+.schedule-form textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+.schedule-form button {
+  justify-self: start;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.form-note {
+  color: #657287 !important;
+  font-size: 12px;
+}
+
+/* Other services */
+
+.svc-more { background: var(--navy); border-top: 1px solid var(--steel); }
+
+.svc-more-list {
+  margin-top: 24px;
+  border-top: 1px solid var(--steel);
+}
+
+.svc-more-link {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--steel);
+  font-family: "Barlow Condensed", Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: .2s ease;
+}
+
+.svc-more-link span {
+  color: var(--orange);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .14em;
+}
+
+.svc-more-link em {
+  margin-left: auto;
+  font-style: normal;
+  color: var(--muted);
+  transition: .2s ease;
+}
+
+.svc-more-link:hover { padding-left: 10px; color: #fff; }
+.svc-more-link:hover em { color: var(--orange); transform: translateX(4px); }
+
+@media (max-width: 900px) {
+  .svc-overview-grid,
+  .schedule-panel { grid-template-columns: 1fr; gap: 40px; }
+  .svc-include-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .svc-hero { padding: 130px 0 70px; }
+  .svc-lead { font-size: 17px; }
+  .svc-intro { font-size: 18px; }
+  .schedule-panel { padding: 28px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .schedule-form button { justify-self: stretch; }
+  .svc-more-link { font-size: 22px; gap: 16px; }
+}
+.svc-include-grid .reveal:nth-child(2) { transition-delay: .08s; }
+.svc-include-grid .reveal:nth-child(3) { transition-delay: .16s; }
+.svc-include-grid .reveal:nth-child(4) { transition-delay: .24s; }
