@@ -1396,21 +1396,20 @@ a.service-card-accent:hover .text-cta { transform: translateX(4px); }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 }
 
-/* MOBILE MENU: solid orange Contact button */
+/* MOBILE MENU: Contact looks the same as the other links */
 @media (max-width: 900px) {
   .site-nav .nav-cta {
-    margin-top: 12px;
-    padding: 15px 16px;
-    text-align: center;
-    background: var(--orange);
-    border: 1px solid var(--orange);
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background: none;
+    border: 0;
     color: #ffffff !important;
   }
 
   .site-nav .nav-cta:hover,
   .site-nav .nav-cta:active {
-    background: var(--dark-orange);
-    border-color: var(--dark-orange);
-    color: #ffffff;
+    background: none;
+    color: var(--orange) !important;
   }
 }
