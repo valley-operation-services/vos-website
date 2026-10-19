@@ -1526,3 +1526,18 @@ a.service-card-accent:hover .text-cta { transform: translateX(4px); }
 }
 
 .ww-more:hover { color: var(--orange); transform: translateX(4px); }
+
+/* DESKTOP NAV: Contact looks the same as the other links */
+@media (min-width: 901px) {
+  .site-nav .nav-cta {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #0e4a7b;
+  }
+
+  .site-nav .nav-cta:hover {
+    background: none;
+    color: #e56a14;
+  }
+}
