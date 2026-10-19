@@ -91,25 +91,53 @@ document.querySelectorAll(".schedule-form").forEach((form) => {
   const dateInput = form.querySelector('input[type="date"]');
   if (dateInput) dateInput.min = new Date().toISOString().split("T")[0];
 
-  form.addEventListener("submit", (e) => {
+  const button = form.querySelector('button[type="submit"]');
+  const status = form.querySelector(".form-status");
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const d = new FormData(form);
+    if (d.get("_honey")) return; // spam bot
+
     const service = form.dataset.service || "General";
-    const subject = `Meeting request: ${service}`;
-    const body = [
-      `Service: ${service}`,
-      `Name: ${d.get("name")}`,
-      `Company: ${d.get("company") || ""}`,
-      `Email: ${d.get("email")}`,
-      `Phone: ${d.get("phone") || ""}`,
-      `Preferred date: ${d.get("date")}`,
-      `Preferred time: ${d.get("time")}`,
-      `Meeting type: ${d.get("format")}`,
-      "",
-      "What I'd like to talk about:",
-      d.get("notes") || "",
-    ].join("\n");
-    window.location.href =
-      `mailto:${VOS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const payload = {
+      _subject: `Meeting request: ${service}`,
+      _template: "table",
+      _replyto: d.get("email"),
+      Service: service,
+      Name: d.get("name"),
+      Company: d.get("company") || "",
+      Email: d.get("email"),
+      Phone: d.get("phone") || "",
+      "Preferred date": d.get("date"),
+      "Preferred time": d.get("time"),
+      "Meeting type": d.get("format"),
+      Notes: d.get("notes") || "",
+    };
+
+    button.disabled = true;
+    button.firstChild.textContent = "Sending... ";
+    status.textContent = "";
+    status.className = "form-status";
+
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${VOS_EMAIL}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) === "false") throw new Error(json.message || "Send failed");
+
+      form.reset();
+      status.textContent = "Thanks! Your meeting request was sent. We will reach out shortly to confirm.";
+      status.classList.add("is-success");
+    } catch (err) {
+      status.textContent = `Something went wrong. Please try again or email us at ${VOS_EMAIL}.`;
+      status.classList.add("is-error");
+    } finally {
+      button.disabled = false;
+      button.firstChild.textContent = "Request meeting ";
+    }
   });
 });

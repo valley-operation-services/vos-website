@@ -1372,3 +1372,9 @@ a.service-card-accent:hover .text-cta { transform: translateX(4px); }
 .svc-include-grid .reveal:nth-child(2) { transition-delay: .08s; }
 .svc-include-grid .reveal:nth-child(3) { transition-delay: .16s; }
 .svc-include-grid .reveal:nth-child(4) { transition-delay: .24s; }
+
+.form-honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.schedule-form button:disabled { opacity: .6; cursor: wait; transform: none; }
+.form-status { min-height: 1.4em; font-size: 14px; font-weight: 600; }
+.form-status.is-success { color: #5fd38a; }
+.form-status.is-error { color: #ff8a65; }
