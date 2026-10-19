@@ -1378,3 +1378,20 @@ a.service-card-accent:hover .text-cta { transform: translateX(4px); }
 .form-status { min-height: 1.4em; font-size: 14px; font-weight: 600; }
 .form-status.is-success { color: #5fd38a; }
 .form-status.is-error { color: #ff8a65; }
+
+/* MOBILE MENU BUTTON FIX: logo box was sitting on top of the
+   hamburger and swallowing taps */
+@media (max-width: 900px) {
+  .menu-toggle {
+    position: relative;
+    z-index: 5;
+    padding: 10px;
+    margin-left: -10px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .menu-toggle span { transition: transform .25s ease, opacity .2s ease; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
