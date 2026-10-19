@@ -24,7 +24,7 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const revealTargets = document.querySelectorAll(
   ".service-card, .process-step, .team-card, .industry-tags span, " +
   ".section-heading, .statement-grid, .about-intro, .contact-panel, .hero-proof > div, " +
-  ".svc-include, .svc-signs, .schedule-panel"
+  ".svc-include, .svc-signs, .schedule-panel, .ww-card"
 );
 
 if (!prefersReducedMotion && "IntersectionObserver" in window) {
