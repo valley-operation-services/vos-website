@@ -1,3 +1,34 @@
+/* =========================
+   GOOGLE ADS TRACKING
+   The Google tag itself is loaded in each page's <head>.
+   To count an event as a Google Ads conversion, paste that conversion
+   action's label (the part after the "/" in send_to: 'AW-18516647561/...')
+   into the matching slot below. Events still send without a label.
+========================= */
+
+const VOS_ADS_ID = "AW-18516647561";
+const VOS_CONVERSION_LABELS = {
+  contact_form_submit: "",
+  phone_click: "",
+  email_click: "",
+};
+
+function trackEvent(name, params = {}) {
+  if (typeof window.gtag !== "function") return; // tag blocked or not loaded
+  window.gtag("event", name, params);
+  const label = VOS_CONVERSION_LABELS[name];
+  if (label) window.gtag("event", "conversion", { send_to: `${VOS_ADS_ID}/${label}` });
+}
+
+// Delegated so it also catches links Cloudflare's email obfuscation rewrites.
+document.addEventListener("click", (e) => {
+  const link = e.target.closest(
+    'a[href^="tel:"], a[href^="mailto:"], a[href*="/cdn-cgi/l/email-protection"]'
+  );
+  if (!link) return;
+  trackEvent(link.getAttribute("href").startsWith("tel:") ? "phone_click" : "email_click");
+});
+
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".site-nav");
 
@@ -130,6 +161,7 @@ document.querySelectorAll(".schedule-form").forEach((form) => {
       if (!res.ok || String(json.success) === "false") throw new Error(json.message || "Send failed");
 
       form.reset();
+      trackEvent("contact_form_submit", { form_service: service });
       status.textContent = "Thanks! Your meeting request was sent. We will reach out shortly to confirm.";
       status.classList.add("is-success");
     } catch (err) {
