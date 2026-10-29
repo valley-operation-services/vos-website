@@ -10,7 +10,7 @@ const VOS_ADS_ID = "AW-18516647561";
 const VOS_CONVERSION_LABELS = {
   contact_form_submit: "kECcCMOPwa4dEIm9tv1E",
   phone_click: "",
-  email_click: "",
+  email_click: "I0uACMaPwa4dEIm9tv1E",
 };
 
 function trackEvent(name, params = {}) {
