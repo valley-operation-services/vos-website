@@ -518,6 +518,38 @@ h3 {
 
 .btn-large { min-width: 180px; }
 
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.contact-phone {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.contact-phone span {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contact-phone:hover {
+  color: var(--orange);
+}
+
 footer {
   position: relative;
   padding: 34px 0;
@@ -660,6 +692,7 @@ footer {
 
   .contact-panel { padding: 32px 24px; }
   .btn-large { width: 100%; }
+  .contact-actions { width: 100%; }
 }
 /* =========================
    ABOUT V.O.S / TEAM
