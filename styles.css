@@ -1850,37 +1850,6 @@ a.service-card:hover .service-icon {
 .service-card:hover::before { transform: scaleX(1); }
 .service-card-accent::before { display: none; }
 
-/* ---- Worked With: client monograms ---- */
-
-.ww-card .ww-num {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  margin: 0;
-  padding: 0;
-}
-
-.ww-mark {
-  margin-bottom: auto;
-  width: 64px;
-  height: 64px;
-  display: grid;
-  place-items: center;
-  background: var(--navy);
-  color: var(--orange);
-  font-family: "Barlow Condensed", Arial, sans-serif;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: .02em;
-  transition: background .25s ease, color .25s ease;
-}
-
-.ww-card:hover .ww-mark { background: var(--orange); color: #fff; }
-
-@media (max-width: 900px) {
-  .ww-mark { width: 54px; height: 54px; font-size: 22px; margin-bottom: 36px; }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-visual, .dash-bars i, .dash-toast { animation: none; }
 }
