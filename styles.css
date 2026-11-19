@@ -858,7 +858,16 @@ footer {
 .site-header {
   background: #ffffff;
   border-bottom: 1px solid #d9dee6;
+  /* Solid header: no blur needed. Blur + fixed position can make the
+     header lag and show page content above it while scrolling up. */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transform: translateZ(0);
+  will-change: transform;
 }
+
+/* Stop the scroll "bounce" from pulling the page out from under the header */
+html, body { overscroll-behavior-y: none; }
 
 /* Remove the separate box around the logo */
 .site-header .brand {
