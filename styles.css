@@ -2274,3 +2274,16 @@ a.service-card:hover .service-icon {
   .mi-body { grid-template-columns: 1fr; }
   .mi-nav { display: none; }
 }
+
+/* Worked With cards without numbers: less empty space above the name */
+.ww-card { min-height: 220px; }
+@media (max-width: 900px) { .ww-card { min-height: 0; } }
+
+/* Number labels removed site-wide: drop the column reserved for them */
+.process-step { grid-template-columns: .6fr 1fr; }
+.svc-include h3 { margin-top: 0; }
+
+@media (max-width: 620px) {
+  .process-step { grid-template-columns: 1fr; gap: 10px; }
+  .process-step p { grid-column: auto; }
+}
