@@ -10,6 +10,21 @@
 
   <title>Contact | V.O.S.</title>
 
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#081224">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Valley Operation Services">
+  <meta property="og:title" content="Contact | V.O.S.">
+  <meta property="og:description" content="Get in touch with Valley Operation Services to start improving how your business runs.">
+  <meta property="og:url" content="https://valleyoperationservices.com/contact/">
+  <meta property="og:image" content="https://valleyoperationservices.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -18,7 +33,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="/styles.css?v=17" />
+  <link rel="stylesheet" href="/styles.css?v=19" />
 
   <!-- Google tag (gtag.js) - Google Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18516647561"></script>
@@ -69,11 +84,11 @@
   <main id="top">
 
 <!-- CONTACT -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section contact-page">
 
-      <div class="container contact-panel">
+      <div class="container schedule-panel">
 
-        <div>
+        <div class="schedule-copy">
 
           <p class="section-kicker">
             LET'S BUILD SOMETHING USEFUL
@@ -86,17 +101,61 @@
           <p>
             Whether you need a better website, a cleaner internal process, or a system
             built around the way your team actually works, start with the problem.
+            Send us a few details and we'll get back to you shortly.
           </p>
 
-        </div>
-        <div class="contact-actions">
-          <a href="mailto:contact@valleyoperationservices.com" class="btn btn-primary btn-large">
-            Contact V.O.S. <span>→</span>
+          <div class="contact-alt">
+            <a href="tel:+17472382245" class="contact-alt-link">
+              <span>Call</span>
+              (747) 238-2245
+            </a>
+            <a href="mailto:contact@valleyoperationservices.com" class="contact-alt-link">
+              <span>Email</span>
+              contact@valleyoperationservices.com
+            </a>
+          </div>
+
+          <a class="btn btn-secondary booking-link" href="#" hidden target="_blank" rel="noopener">
+            Pick a time on our calendar <span>→</span>
           </a>
-          <a href="tel:+17472382245" class="contact-phone">
-            <span>Or call</span> (747) 238-2245
-          </a>
+
         </div>
+
+        <form id="contact-form" class="schedule-form" data-service="General inquiry" data-success="Thanks! Your message was sent. We'll be in touch shortly.">
+          <div class="form-row">
+            <label>Name<input type="text" name="name" required autocomplete="name"></label>
+            <label>Company<input type="text" name="company" autocomplete="organization"></label>
+          </div>
+          <div class="form-row">
+            <label>Email<input type="email" name="email" required autocomplete="email"></label>
+            <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+          </div>
+          <label>What's going on?
+            <textarea name="notes" rows="5" required placeholder="A few sentences about your business and what is slowing you down."></textarea>
+          </label>
+          <div class="form-row">
+            <label>Best day to talk (optional)<input type="date" name="date"></label>
+            <label>Preferred time
+              <select name="time">
+                <option value="">Any time</option>
+                <option>Morning (8 to 11 AM)</option>
+                <option>Midday (11 AM to 1 PM)</option>
+                <option>Afternoon (1 to 5 PM)</option>
+              </select>
+            </label>
+          </div>
+          <label>How should we reach you?
+            <select name="format">
+              <option>Phone call</option>
+              <option>Video call</option>
+              <option>Email</option>
+              <option>In person</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-primary">Send message <span>→</span></button>
+          <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
 
       </div>
     </section>
@@ -135,7 +194,7 @@
 
   </footer>
 
-  <script src="/script.js?v=7"></script>
+  <script src="/script.js?v=8"></script>
 
 </body>
 </html>

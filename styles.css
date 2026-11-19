@@ -2287,3 +2287,82 @@ a.service-card:hover .service-icon {
   .process-step { grid-template-columns: 1fr; gap: 10px; }
   .process-step p { grid-column: auto; }
 }
+
+/* =========================
+   CONTACT PAGE FORM
+========================= */
+
+.contact-page { padding-top: 170px; }
+
+.contact-alt {
+  display: grid;
+  gap: 2px;
+  margin-top: 30px;
+  border-top: 1px solid var(--steel);
+}
+
+.contact-alt-link {
+  display: grid;
+  gap: 2px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--steel);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  transition: color .2s ease, padding-left .2s ease;
+}
+
+.contact-alt-link span {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.contact-alt-link:hover { color: var(--orange); padding-left: 6px; }
+
+@media (max-width: 620px) {
+  .contact-page { padding-top: 120px; }
+  .contact-alt-link { font-size: 16px; }
+}
+
+/* =========================
+   HOME: DEMOS TEASER
+========================= */
+
+.home-demos {
+  background:
+    radial-gradient(circle at 90% 20%, rgba(229,106,20,.14), transparent 40%),
+    var(--surface);
+  border-top: 1px solid var(--steel);
+}
+
+.home-demos-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.home-demos-copy h2 {
+  margin: 12px 0 20px;
+  font-size: clamp(48px, 5vw, 72px);
+  text-transform: uppercase;
+  letter-spacing: -.02em;
+}
+
+.home-demos-copy > p:not(.section-kicker) { color: var(--muted); max-width: 460px; }
+.home-demos-copy .hero-actions { margin-top: 30px; }
+
+.home-demos-shot { display: block; }
+.home-demos-shot .demo-browser { border-color: rgba(255,255,255,.1); box-shadow: 0 40px 80px rgba(0,0,0,.45); }
+.home-demos-shot .demo-browser-bar { background: #1b2a42; border-color: rgba(255,255,255,.08); }
+.home-demos-shot .demo-browser-bar i { background: #3a4b66; }
+.home-demos-shot .demo-browser-bar i:first-child { background: var(--orange); }
+.home-demos-shot .demo-browser-bar span { background: #0f1b2d; color: #8d99ab; }
+.home-demos-shot:hover .demo-browser { transform: translateY(-6px); }
+
+@media (max-width: 900px) {
+  .home-demos-grid { grid-template-columns: 1fr; gap: 40px; }
+}

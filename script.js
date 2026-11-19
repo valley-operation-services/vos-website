@@ -124,6 +124,7 @@ document.querySelectorAll(".schedule-form").forEach((form) => {
 
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector(".form-status");
+  const buttonLabel = button.firstChild.textContent;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -140,8 +141,8 @@ document.querySelectorAll(".schedule-form").forEach((form) => {
       Company: d.get("company") || "",
       Email: d.get("email"),
       Phone: d.get("phone") || "",
-      "Preferred date": d.get("date"),
-      "Preferred time": d.get("time"),
+      "Preferred date": d.get("date") || "",
+      "Preferred time": d.get("time") || "",
       "Meeting type": d.get("format"),
       Notes: d.get("notes") || "",
     };
@@ -162,14 +163,14 @@ document.querySelectorAll(".schedule-form").forEach((form) => {
 
       form.reset();
       trackEvent("contact_form_submit", { form_service: service });
-      status.textContent = "Thanks! Your meeting request was sent. We will reach out shortly to confirm.";
+      status.textContent = form.dataset.success || "Thanks! Your meeting request was sent. We will reach out shortly to confirm.";
       status.classList.add("is-success");
     } catch (err) {
       status.textContent = `Something went wrong. Please try again or email us at ${VOS_EMAIL}.`;
       status.classList.add("is-error");
     } finally {
       button.disabled = false;
-      button.firstChild.textContent = "Request meeting ";
+      button.firstChild.textContent = buttonLabel;
     }
   });
 });
